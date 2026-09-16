@@ -1,5 +1,7 @@
 # thai-writing
 
+ภาษาไทย → [README.th.md](README.th.md)
+
 A signpost skill for AI coding agents: draft and edit **Thai** text correctly in any genre and any file type.
 
 Agents already write good English because the style guides are in their training. Thai is not: the conventions a Thai reader absorbs by habit — spacing as punctuation, no sentence-final full stop, ไม้ยมก, which numerals, how a government letter is shaped — are exactly what every model gets half right. This skill does not re-teach writing. It tells the agent to **keep the English guide it already follows for the genre and apply only the Thai deltas**, each anchored to a Thai authority, and ships a zero-dependency checker for the mechanics.
