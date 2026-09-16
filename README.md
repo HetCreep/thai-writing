@@ -1,52 +1,99 @@
 # thai-writing
 
-ภาษาไทย → [README.th.md](README.th.md)
+English → [README.en.md](README.en.md)
 
-A signpost skill for AI coding agents: draft and edit **Thai** text correctly in any genre and any file type.
+สกิลชี้ทางสำหรับเอเจนต์ AI ที่เขียนโค้ด ช่วยร่างและแก้ข้อความ **ภาษาไทย** ให้ถูกต้อง ในงานเขียนทุกประเภทและไฟล์ทุกชนิด
 
-Agents already write good English because the style guides are in their training. Thai is not: the conventions a Thai reader absorbs by habit — spacing as punctuation, no sentence-final full stop, ไม้ยมก, which numerals, how a government letter is shaped — are exactly what every model gets half right. This skill does not re-teach writing. It tells the agent to **keep the English guide it already follows for the genre and apply only the Thai deltas**, each anchored to a Thai authority, and ships a zero-dependency checker for the mechanics.
+เอเจนต์เขียนภาษาอังกฤษได้ดีอยู่แล้ว เพราะ style guide ภาษาอังกฤษอยู่ในข้อมูลที่ใช้ฝึกโมเดล แต่ภาษาไทยไม่เป็นอย่างนั้น ธรรมเนียมที่คนไทยอ่านจนชิน (ใช้การเว้นวรรคแทนเครื่องหมายวรรคตอน ไม่ใส่มหัพภาคท้ายประโยค ไม้ยมก จะใช้เลขแบบไหน หนังสือราชการมีรูปแบบอย่างไร) คือจุดที่โมเดลทุกตัวทำถูกแค่ครึ่งเดียว สกิลนี้ไม่ได้สอนเขียนใหม่ตั้งแต่ต้น แต่บอกเอเจนต์ให้ยึด style guide ภาษาอังกฤษที่ใช้กับงานประเภทนั้นอยู่แล้ว แล้วปรับเฉพาะจุดที่ภาษาไทยต่างออกไป โดยแต่ละจุดอ้างอิงแหล่งที่เป็นหลักของไทย พร้อมตัวตรวจที่ไม่ต้องติดตั้งไลบรารีเพิ่ม สำหรับตรวจการเว้นวรรค เครื่องหมาย และอักขระ
 
-## Install
+## การติดตั้ง
 
-The skill is a plain [Agent Skills](https://agentskills.io) folder — copy `skills/thai-writing/` into your agent's skills directory:
+สกิลนี้เป็นโฟลเดอร์ [Agent Skills](https://agentskills.io) ธรรมดา คัดลอก `skills/thai-writing/` ไปไว้ในโฟลเดอร์สกิลของเอเจนต์
 
-| agent | directory |
+| เอเจนต์ | โฟลเดอร์ |
 |---|---|
-| Claude Code (personal) | `~/.claude/skills/thai-writing/` |
-| Claude Code (project) | `<repo>/.claude/skills/thai-writing/` |
+| Claude Code (ส่วนตัว) | `~/.claude/skills/thai-writing/` |
+| Claude Code (โปรเจกต์) | `<repo>/.claude/skills/thai-writing/` |
 | Antigravity | `~/.gemini/config/skills/thai-writing/` |
 | Codex CLI | `~/.codex/skills/thai-writing/` |
-| GitHub Copilot CLI / any Agent-Skills reader | `~/.agents/skills/thai-writing/` |
+| เครื่องมืออื่นที่อ่าน Agent Skills ได้ (เช่น GitHub Copilot CLI) | `~/.agents/skills/thai-writing/` |
 
-It triggers on its own whenever the agent is about to write or edit text containing Thai script.
+สกิลนี้ทำงานเองทันทีที่เอเจนต์กำลังจะเขียนหรือแก้ข้อความที่มีอักษรไทย
 
-## The checker
+## ตัวตรวจสอบ
 
 ```
-node skills/thai-writing/scripts/check-thai.mjs <file>...            # report; exit 1 on an error finding
-node skills/thai-writing/scripts/check-thai.mjs --genre gov <file>   # silence Thai-digit info findings
-node skills/thai-writing/scripts/check-thai.mjs --genre ui <file>    # silence NBSP; --fix keeps U+00A0
-node skills/thai-writing/scripts/check-thai.mjs --fix --write <file> # repair error-class mechanics in place
+node skills/thai-writing/scripts/check-thai.mjs <file>...            # รายงานผล คืนค่า exit 1 ถ้าพบ error
+node skills/thai-writing/scripts/check-thai.mjs --genre gov <file>   # ไม่รายงาน info เรื่องเลขไทย
+node skills/thai-writing/scripts/check-thai.mjs --genre ui <file>    # ไม่รายงาน NBSP และ --fix จะคง U+00A0 ไว้
+node skills/thai-writing/scripts/check-thai.mjs --fix --write <file> # แก้รายการระดับ error ให้อัตโนมัติ แล้วเขียนทับไฟล์เดิม
 ```
 
-Rules by severity — **error** (auto-fixable): ำ written as two code points · zero-width space · NBSP (unless `--genre ui`) · BOM · full-width marks leaked from a CJK source. **warn** (judgment, explained in the references): a doubled space · sentence-final full stop · `ไม้ยมก` spacing before/after · spacing around numbers and Latin words · `;` and ` · ` as connectors · space before `,`/`;` · space before `ฯ`/`ฯลฯ` · the ellipsis character. **info**: Thai digits outside genres that require them, and space before `? ! :` — ORST's own rule spaces these marks, while the vendor and thesis guides this skill otherwise follows attach them, so either convention is only noted, never flagged as wrong. No check looks at a closing quote. A trailing run of spaces at line end (a Markdown hard break) is never flagged, and `--fix` never collapses, adds or moves an ordinary space; it only replaces or removes the error-class characters listed above: a decomposed ำ becomes U+0E33, a zero-width space is deleted, a BOM is deleted, an NBSP becomes an ordinary space (kept as U+00A0 under `--genre ui`), and a full-width mark leaked from a CJK source is normalized — a full-width Latin letter, digit or ASCII punctuation mark becomes its plain ASCII form, and a full-width (ideographic) space, comma or full stop becomes one ordinary space, or is dropped if a space already sits next to it.
+กฎแยกตามระดับ
 
-Flags: `--genre <name>` (`gov` silences Thai-digit findings; `ui` silences NBSP and keeps U+00A0 under `--fix`) · `--allow-ellipsis` (accepts `…` where a genre such as Netflix subtitles wants it) · `--plain` (turns off Markdown awareness — fenced blocks and code spans become prose again, for raw `.txt` corpora) · `--json` (machine-readable findings) · `--strict` (exit 1 on any non-info finding, not only `error`) · `--fix` (repairs error-class mechanics only; judgment-class `warn` findings are left for a human) · `--write` (writes the `--fix` result back to the file instead of printing it).
+**ระดับ error** (แก้อัตโนมัติได้)
 
-Exit code: 0 clean, 1 on an error finding (or any non-info finding under `--strict`), 2 on no files given or an unreadable file. Markdown-aware by default: fenced blocks, code spans and table-alignment spacing are not prose.
+- `ำ` ที่เขียนแยกเป็นสองอักขระ (`U+0E4D` `U+0E32`)
+- zero-width space (`U+200B`)
+- NBSP (ยกเว้นเมื่อใช้ `--genre ui`)
+- BOM
+- เครื่องหมายเต็มความกว้างที่หลุดมาจากแหล่ง CJK
 
-Zero dependencies, Node.js 20+. Tests: `node --test test/check-thai.test.mjs` (name the file — the directory form fails on Node 24).
+**ระดับ warn** (ต้องใช้วิจารณญาณ อธิบายไว้ใน references)
 
-## What is in the box
+- เว้นวรรคซ้อนสองครั้งขึ้นไป
+- จบประโยคด้วยมหัพภาค
+- การเว้นวรรคหน้า-หลัง `ๆ`
+- การเว้นวรรครอบตัวเลขและคำที่เขียนด้วยอักษรละติน
+- `;` กับ ` · ` ที่ใช้เป็นตัวเชื่อมกลางประโยค
+- การเว้นวรรคหน้า `,` กับ `;`
+- การเว้นวรรคหน้า `ฯ` กับ `ฯลฯ`
+- อักขระจุดไข่ปลา (`…`)
 
-- `skills/thai-writing/SKILL.md` — the universal core, the genre router, file-type mechanics, the never-list.
-- `skills/thai-writing/references/` — one short file per genre: `articles-news.md` · `docs-readme.md` · `government-legal.md` · `ui-i18n.md` · `subtitles-social.md` · `fiction-translation.md` · `academic-thesis.md` · `channels.md` (one file type, many producers — `.docx`/`.pdf`/`.xlsx`/`.pptx`) · `transfer/en-to-th.md` (the English-convention-to-Thai-form transfer table) — plus `sources.md` and its machine-readable twin `sources.json`, the bibliography every rule cites.
-- `skills/thai-writing/scripts/check-thai.mjs` + `test/` — the instrument.
+**ระดับ info**
 
-## Sources
+- เลขไทยในงานที่ไม่ได้กำหนดให้ใช้เลขไทย
+- การเว้นวรรคหน้า `? ! :` — ราชบัณฑิตยสภาเว้นวรรคหน้าเครื่องหมายเหล่านี้ ส่วนคู่มือของบริษัท (Microsoft, Netflix) และคู่มือวิทยานิพนธ์ของมหาวิทยาลัยที่สกิลนี้อ้างอิงส่วนใหญ่เขียนติดคำ จึงแจ้งไว้เป็นข้อมูล ไม่นับว่าผิด
 
-Every rule cites its authority in `references/sources.md` — สำนักงานราชบัณฑิตยสภา (spacing, punctuation, transliteration), ระเบียบสำนักนายกรัฐมนตรีว่าด้วยงานสารบรรณ, Unicode/UAX/CLDR, and the official Thai style guides of Microsoft and Netflix. The most-cited core rule, dropping the sentence-final full stop, is **not** an ORST rule — ORST's own มหัพภาค page still lists the full stop as a sentence-end mark; the authority for dropping it is Microsoft's and Netflix's Thai guides (the core table in `skills/thai-writing/SKILL.md` explains why). A rule with no source is marked ⚠️ house convention.
+ไม่มีการตรวจเครื่องหมายคำพูดปิด ตัวตรวจไม่รายงานช่องว่างท้ายบรรทัด ไม่ว่ากี่ช่อง (เป็น hard break ของ Markdown) `--fix` ไม่ยุบ ไม่เพิ่ม และไม่ย้ายช่องว่างธรรมดา แก้เฉพาะอักขระระดับ error ที่ระบุไว้ข้างบนเท่านั้น ได้แก่
 
-## License
+- เปลี่ยน `ำ` ที่เขียนแยกสองอักขระให้เป็น U+0E33
+- ลบ zero-width space ทิ้ง
+- ลบ BOM ทิ้ง
+- เปลี่ยน NBSP ให้เป็นช่องว่างธรรมดา (คงไว้เป็น U+00A0 เมื่อใช้ `--genre ui`)
+- เปลี่ยนตัวอักษรละติน ตัวเลข หรือเครื่องหมายวรรคตอนแบบเต็มความกว้างที่หลุดมาจากแหล่ง CJK ให้เป็นรูป ASCII ปกติ
+- เปลี่ยนช่องว่างเต็มความกว้างกับเครื่องหมายวรรคตอน CJK (`、` `。`) ให้เป็นช่องว่างธรรมดาหนึ่งช่อง หรือตัดทิ้งถ้ามีช่องว่างอยู่ติดกันแล้ว
 
-Apache-2.0 — see [LICENSE](LICENSE).
+แฟล็ก
+
+- `--genre <name>` — `gov` ไม่รายงานเรื่องเลขไทย `ui` ไม่รายงาน NBSP และให้ `--fix` คง U+00A0 ไว้
+- `--allow-ellipsis` — ยอมรับ `…` ในประเภทงานเขียนที่ต้องใช้ เช่น Netflix subtitles
+- `--plain` — ปิดการรับรู้ Markdown (fenced block กับ code span กลับมานับเป็นเนื้อความปกติ) ใช้กับไฟล์ `.txt` ดิบ
+- `--json` — รายงานผลเป็นข้อมูลที่โปรแกรมอ่านต่อได้
+- `--strict` — คืนค่า exit 1 เมื่อพบรายการระดับใดก็ได้ที่ไม่ใช่ info ไม่ใช่แค่ error
+- `--fix` — แก้เฉพาะรายการระดับ error ปล่อยรายการระดับ warn ให้คนตัดสินใจเอง
+- `--write` — เขียนผลจาก `--fix` ทับไฟล์เดิมแทนการพิมพ์ออกหน้าจอ
+
+รหัสออก (exit code)
+
+- `0` — สะอาด ไม่พบปัญหา
+- `1` — พบรายการระดับ error (หรือรายการที่ไม่ใช่ info เมื่อใช้ `--strict`)
+- `2` — ไม่ส่งไฟล์มาเลย หรืออ่านไฟล์ไม่ได้
+
+โดยค่าเริ่มต้น ตัวตรวจรับรู้ไวยากรณ์ Markdown ไม่นับ fenced block code span และช่องว่างจัดตำแหน่งในตารางเป็นเนื้อความ
+
+ไม่พึ่งไลบรารีภายนอก ใช้ได้กับ Node.js 20 ขึ้นไป ทดสอบด้วยคำสั่ง `node --test test/check-thai.test.mjs` (ต้องระบุชื่อไฟล์ เพราะรูปแบบโฟลเดอร์ใช้ไม่ได้บน Node 24)
+
+## มีอะไรอยู่ในนี้
+
+- `skills/thai-writing/SKILL.md` — แกนกลางที่ใช้ได้ทุกประเภทงานเขียน ตัวจัดเส้นทางไปยัง reference แต่ละประเภท ข้อควรระวังเฉพาะชนิดไฟล์ และรายการข้อห้าม
+- `skills/thai-writing/references/` — ไฟล์สั้น ๆ หนึ่งไฟล์ต่อหนึ่งประเภทงานเขียน ได้แก่ `articles-news.md` `docs-readme.md` `government-legal.md` `ui-i18n.md` `subtitles-social.md` `fiction-translation.md` `academic-thesis.md` `channels.md` (ไฟล์นามสกุลเดียวที่สร้างได้จากหลายโปรแกรม เช่น `.docx` `.pdf` `.xlsx` `.pptx`) และ `transfer/en-to-th.md` (ตารางแปลงธรรมเนียมภาษาอังกฤษเป็นรูปแบบไทย) รวมถึง `sources.md` กับฉบับที่โปรแกรมอ่านได้ `sources.json` ซึ่งเป็นบรรณานุกรมที่ทุกกฎอ้างอิง
+- `skills/thai-writing/scripts/check-thai.mjs` กับโฟลเดอร์ `test/` — เครื่องมือตรวจ
+
+## แหล่งอ้างอิง
+
+ทุกกฎอ้างอิงแหล่งที่มาไว้ที่ `references/sources.md` — สำนักงานราชบัณฑิตยสภา (การเว้นวรรค เครื่องหมายวรรคตอน การทับศัพท์) ระเบียบสำนักนายกรัฐมนตรีว่าด้วยงานสารบรรณ Unicode/UAX/CLDR และคู่มือภาษาไทยฉบับทางการของ Microsoft กับ Netflix กฎที่ใช้บ่อยที่สุดอย่างการไม่ใส่มหัพภาคท้ายประโยค **ไม่ได้** มาจากราชบัณฑิตยสภา เพราะหน้าว่าด้วยมหัพภาคของราชบัณฑิตยสภาเองยังระบุให้ใช้มหัพภาคเมื่อจบประโยค ที่มาของกฎนี้คือคู่มือภาษาไทยของ Microsoft และ Netflix (ดูเหตุผลในตารางแกนกลางของ `skills/thai-writing/SKILL.md`) กฎที่ไม่มีแหล่งอ้างอิงจะกำกับด้วย ⚠️ house convention
+
+## สัญญาอนุญาต
+
+Apache-2.0 — ดู [LICENSE](LICENSE)
