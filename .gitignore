@@ -1,0 +1,10 @@
+node_modules/
+.coalmine/
+.coalledger/
+*.log
+# room governance never ships (the public tree is the skill, the checker and the docs)
+CLAUDE.md
+MEMORY*.md
+AGENTS.md
+.claude/
+.agents/

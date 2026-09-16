@@ -1,0 +1,624 @@
+{
+  "generatedFrom": "sources.md",
+  "stampFormat": "YYYY-MM-DD",
+  "revalidateRule": "stamp + 180 days",
+  "sources": [
+    {
+      "id": "orst-spacing",
+      "group": "Thai authorities",
+      "name": "สำนักงานราชบัณฑิตยสภา, หลักเกณฑ์การเว้นวรรค",
+      "governs": "sentence-end space, phrase spaces, names and titles, company and address parts, lists, Thai–foreign script",
+      "urls": [
+        "https://www.orst.go.th/iwfm_modal.asp?i=3529352MTG5813223326234222622&m=n"
+      ],
+      "edition": "in หลักเกณฑ์การใช้เครื่องหมายวรรคตอนและเครื่องหมายอื่น ๆ (printing 6)",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "orst-punct",
+      "group": "Thai authorities",
+      "name": "สำนักงานราชบัณฑิตยสภา, หลักเกณฑ์การใช้เครื่องหมายวรรคตอนฯ",
+      "governs": "pages มหัพภาค, ไม้ยมก, ไปยาลน้อย, วงเล็บ, ปรัศนี",
+      "urls": [
+        "http://legacy.orst.go.th/?page_id=10387"
+      ],
+      "edition": "printing 6, revised (ฉบับราชบัณฑิตยสถาน)",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ (HTTP only — the site's HTTPS port refuses the connection; fetch as http://)"
+    },
+    {
+      "id": "orst-translit-en",
+      "group": "Thai authorities",
+      "name": "ประกาศสำนักนายกรัฐมนตรี เรื่อง หลักเกณฑ์การทับศัพท์ภาษาอังกฤษ",
+      "governs": "English loanword spelling",
+      "urls": [
+        "http://legacy.orst.go.th/wp-content/uploads/2015/03/หลักเกณฑ์ทับศัพท์อังกฤษ2532.pdf"
+      ],
+      "edition": "ราชกิจจานุเบกษา เล่ม 106 ตอนที่ 153, 14 กันยายน 2532",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "orst-translit-db",
+      "group": "Thai authorities",
+      "name": "สำนักงานราชบัณฑิตยสภา, ระบบฐานข้อมูลคำทับศัพท์",
+      "governs": "per-word lookup",
+      "urls": [
+        "https://transliteration.orst.go.th/"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ reached (no entry quoted)"
+    },
+    {
+      "id": "saraban",
+      "group": "Thai authorities",
+      "name": "ระเบียบสำนักนายกรัฐมนตรีว่าด้วยงานสารบรรณ พ.ศ. 2526 with ฉบับที่ 2",
+      "governs": "letter types, letter parts (ข้อ 11–12), date form, ชั้นความเร็ว (ข้อ 28), paper (ข้อ 74–76), salutation table (ภาคผนวก 2)",
+      "urls": [
+        "https://www.opm.go.th/media1/temp/pitthais/CentralReg/6govtdoc2526.pdf"
+      ],
+      "edition": "ราชกิจจานุเบกษา เล่ม 122 ตอนพิเศษ 99 ง, 23 กันยายน 2548",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "saraban-3",
+      "group": "Thai authorities",
+      "name": "ระเบียบฯ (ฉบับที่ 3) พ.ศ. 2560",
+      "governs": "amendment",
+      "urls": [
+        "https://icead.kku.ac.th/docs/2564-sarabun-4/"
+      ],
+      "edition": "2560",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": false,
+      "status": "⚠️ existence seen in a university listing; text not opened"
+    },
+    {
+      "id": "saraban-4",
+      "group": "Thai authorities",
+      "name": "ระเบียบฯ (ฉบับที่ 4) พ.ศ. 2564",
+      "governs": "electronic correspondence",
+      "urls": [
+        "https://laws.md.go.th/laws-implement/home/detail/81/?sID=81"
+      ],
+      "edition": "2564",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ title and dates only; articles not read"
+    },
+    {
+      "id": "opm-typing",
+      "group": "Thai authorities",
+      "name": "หนังสือสำนักนายกรัฐมนตรี ที่ นร 0106/ว 2019 and คำอธิบายการพิมพ์หนังสือราชการภาษาไทยด้วยโปรแกรมการพิมพ์ในเครื่องคอมพิวเตอร์",
+      "governs": "TH SarabunPSK 16 pt, margins, spacing, garuda; cites มติคณะรัฐมนตรี 7 กันยายน 2553 (13 national fonts)",
+      "urls": [
+        "https://www.opm.go.th/media1/temp/panidapa/File/template/Explain_Typing_.pdf",
+        "https://www.opm.go.th/media1/temp/panidapa/File/template/CN20189.pdf"
+      ],
+      "edition": "November 2553",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ (scanned; read as images)"
+    },
+    {
+      "id": "gov-thai-digits",
+      "group": "Thai authorities",
+      "name": "NSTDA gov-dx, การใช้เลขไทยในเอกสารราชการ",
+      "governs": "secondary summary of the cabinet policy on Thai numerals and B.E. years",
+      "urls": [
+        "https://pub.nstda.or.th/gov-dx/thai-number-format/"
+      ],
+      "edition": "undated",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ secondary; the resolution itself ⚠️ not opened"
+    },
+    {
+      "id": "mfu-thesis",
+      "group": "Thai authorities",
+      "name": "มหาวิทยาลัยแม่ฟ้าหลวง, คู่มือการจัดทำวิทยานิพนธ์ ระดับบัณฑิตศึกษา",
+      "governs": "page setup ch. 3",
+      "urls": [
+        "https://postgrads.mfu.ac.th/wp-content/uploads/2023/04/คู่มือการจัดทำวิทยานิพนธ์-2568_1.pdf"
+      ],
+      "edition": "ฉบับปรับปรุง พ.ศ. 2568",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "kmutt-thesis",
+      "group": "Thai authorities",
+      "name": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี คณะวิศวกรรมศาสตร์, คู่มือการเขียนและพิมพ์วิทยานิพนธ์ ระดับบัณฑิตศึกษา",
+      "governs": null,
+      "urls": [
+        "https://eng.kmutt.ac.th/wp-content/uploads/2025/06/THESIS-DISSERTATIOMN-PREPARATION-THAI-MANUAL.pdf"
+      ],
+      "edition": "ฉบับปรับปรุง 1 ตุลาคม 2560",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "chula-thesis",
+      "group": "Thai authorities",
+      "name": "บัณฑิตวิทยาลัย จุฬาลงกรณ์มหาวิทยาลัย, คู่มือการพิมพ์วิทยานิพนธ์",
+      "governs": null,
+      "urls": [
+        "https://www.grad.chula.ac.th/download/thesis.pdf"
+      ],
+      "edition": "2548",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": false,
+      "status": "⚠️ bot wall on the stamp date; numbers carried from this house's reading of 2026-09-05"
+    },
+    {
+      "id": "mahidol-thesis",
+      "group": "Thai authorities",
+      "name": "Faculty of Graduate Studies, Mahidol University",
+      "governs": "thesis format",
+      "urls": [
+        "https://graduate.mahidol.ac.th/Thesis_format/main_thesis.aspx"
+      ],
+      "edition": "current",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": false,
+      "status": "⚠️ connection refused; figures seen only in a search snippet"
+    },
+    {
+      "id": "ms-thai",
+      "group": "Vendor, platform and standards sources",
+      "name": "Microsoft Thai Localization Style Guide",
+      "governs": "voice, pronouns, punctuation, numbers, placeholders, error phrases",
+      "urls": [
+        "https://aka.ms/thai-styleguide"
+      ],
+      "edition": "PDF revised 2024-09-05",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "ms-writing",
+      "group": "Vendor, platform and standards sources",
+      "name": "Microsoft Writing Style Guide (English signpost)",
+      "governs": null,
+      "urls": [
+        "https://learn.microsoft.com/en-us/style-guide/welcome/"
+      ],
+      "edition": "2025-01-08",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "google-dev",
+      "group": "Vendor, platform and standards sources",
+      "name": "Google developer documentation style guide",
+      "governs": "code in text; writing for a global audience",
+      "urls": [
+        "https://developers.google.com/style/code-in-text"
+      ],
+      "edition": "2026-01-06; global page 2026-08-25",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "diataxis",
+      "group": "Vendor, platform and standards sources",
+      "name": "Diátaxis",
+      "governs": "four documentation modes",
+      "urls": [
+        "https://diataxis.fr/"
+      ],
+      "edition": "undated",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "gitbook",
+      "group": "Vendor, platform and standards sources",
+      "name": "GitBook docs",
+      "governs": "hint and tabs blocks; Git Sync content configuration (SUMMARY.md, .gitbook.yaml)",
+      "urls": [
+        "https://gitbook.com/docs/docs-as-code/git-sync/content-configuration"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "gfm",
+      "group": "Vendor, platform and standards sources",
+      "name": "GitHub Flavored Markdown Spec",
+      "governs": "soft line breaks",
+      "urls": [
+        "https://github.github.com/gfm/"
+      ],
+      "edition": "0.29-gfm, 2019-04-06",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "conv-commits",
+      "group": "Vendor, platform and standards sources",
+      "name": "Conventional Commits",
+      "governs": null,
+      "urls": [
+        "https://www.conventionalcommits.org/en/v1.0.0/"
+      ],
+      "edition": "1.0.0",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "apple-hig",
+      "group": "Vendor, platform and standards sources",
+      "name": "Apple Human Interface Guidelines",
+      "governs": "Writing",
+      "urls": [
+        "https://developer.apple.com/design/human-interface-guidelines/writing"
+      ],
+      "edition": "change note 2025-12-16",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "material",
+      "group": "Vendor, platform and standards sources",
+      "name": "Material Design 3",
+      "governs": "content design style guide",
+      "urls": [
+        "https://m3.material.io/foundations/content-design/style-guide"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": false,
+      "status": "⚠️ script-rendered page; text not readable"
+    },
+    {
+      "id": "netflix-th",
+      "group": "Vendor, platform and standards sources",
+      "name": "Netflix Thai Timed Text Style Guide",
+      "governs": null,
+      "urls": [
+        "https://partnerhelp.netflixstudios.com/hc/en-us/articles/220448308-Thai-Timed-Text-Style-Guide"
+      ],
+      "edition": "updated 2025-10-17",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "netflix-en",
+      "group": "Vendor, platform and standards sources",
+      "name": "Netflix English (USA) Timed Text Style Guide",
+      "governs": null,
+      "urls": [
+        "https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-USA-Timed-Text-Style-Guide"
+      ],
+      "edition": "updated 2025-12-19",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "bbc-subtitles",
+      "group": "Vendor, platform and standards sources",
+      "name": "BBC Subtitle Guidelines",
+      "governs": null,
+      "urls": [
+        "https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ reached (<title>BBC Subtitle Guidelines); named only, not quoted anywhere in this skill"
+    },
+    {
+      "id": "x-counting",
+      "group": "Vendor, platform and standards sources",
+      "name": "twitter-text configuration v3",
+      "governs": "weighted character count",
+      "urls": [
+        "https://github.com/twitter/twitter-text/blob/master/config/v3.json"
+      ],
+      "edition": "v3",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "cldr",
+      "group": "Vendor, platform and standards sources",
+      "name": "Unicode CLDR",
+      "governs": "`th` plural rules chart; cldr-json `th` numbers and Buddhist calendar; checked in Node ICU 78.3 / CLDR 48",
+      "urls": [
+        "https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html"
+      ],
+      "edition": "CLDR 48",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "icu-boundary",
+      "group": "Vendor, platform and standards sources",
+      "name": "ICU User Guide",
+      "governs": "boundary analysis (dictionary word breaks for Thai)",
+      "urls": [
+        "https://unicode-org.github.io/icu/userguide/boundaryanalysis/"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "uax14",
+      "group": "Vendor, platform and standards sources",
+      "name": "Unicode UAX #14 Line Breaking",
+      "governs": "class SA",
+      "urls": [
+        "https://www.unicode.org/reports/tr14/"
+      ],
+      "edition": "Unicode 17.0.0, 2025-09-05",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "ucd",
+      "group": "Vendor, platform and standards sources",
+      "name": "Unicode Character Database, UnicodeData.txt",
+      "governs": "U+0E33 decomposition, no case in Thai",
+      "urls": [
+        "https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt"
+      ],
+      "edition": "latest",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "css-text",
+      "group": "Vendor, platform and standards sources",
+      "name": "W3C CSS Text Module Level 3",
+      "governs": "`word-break`, segment breaks",
+      "urls": [
+        "https://www.w3.org/TR/css-text-3/"
+      ],
+      "edition": "CRD 2026-08-14",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "w3c-thai-gap",
+      "group": "Vendor, platform and standards sources",
+      "name": "W3C Thai Gap Analysis",
+      "governs": "sentence spaces, justification, letter-spacing, ไม้ยมก at line start",
+      "urls": [
+        "https://www.w3.org/TR/thai-gap/"
+      ],
+      "edition": "Group Draft Note 2025-06-01",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "w3c-thai",
+      "group": "Vendor, platform and standards sources",
+      "name": "W3C Thai Script Resources",
+      "governs": null,
+      "urls": [
+        "https://www.w3.org/International/sealreq/thai/"
+      ],
+      "edition": "undated",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "iso29500",
+      "group": "Vendor, platform and standards sources",
+      "name": "ISO/IEC 29500-1 (= ECMA-376 Part 1) as quoted in the Open XML SDK reference",
+      "governs": "`w:lang`, `w:rFonts`, `w:szCs`, `w:jc` values, `w:spacing` line rule",
+      "urls": [
+        "https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.runfonts"
+      ],
+      "edition": "Open XML SDK 3.0.1 reference",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ (ECMA PDF itself not opened)"
+    },
+    {
+      "id": "word-vba",
+      "group": "Vendor, platform and standards sources",
+      "name": "Word VBA reference",
+      "governs": "`WdParagraphAlignment`, `Font.NameBi`",
+      "urls": [
+        "https://learn.microsoft.com/en-us/office/vba/api/word.wdparagraphalignment"
+      ],
+      "edition": "2017-06-08",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "ms-justify",
+      "group": "Vendor, platform and standards sources",
+      "name": "Microsoft Globalization",
+      "governs": "text justification (Thai = inter-cluster)",
+      "urls": [
+        "https://learn.microsoft.com/en-us/globalization/fonts-layout/text-justification"
+      ],
+      "edition": "2023-10-31",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "cp874",
+      "group": "Vendor, platform and standards sources",
+      "name": "Microsoft",
+      "governs": "code page identifiers (874 windows-874 Thai)",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows/win32/intl/code-page-identifiers"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "python-docx",
+      "group": "Vendor, platform and standards sources",
+      "name": "python-docx source",
+      "governs": "`Font.name` writes `w:ascii` and `w:hAnsi` only",
+      "urls": [
+        "https://github.com/python-openxml/python-docx/blob/master/src/docx/text/font.py"
+      ],
+      "edition": "1.2.0",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "docxjs",
+      "group": "Vendor, platform and standards sources",
+      "name": "docx (npm) source",
+      "governs": "run fonts object, `sizeComplexScript`, `language`",
+      "urls": [
+        "https://github.com/dolanmiu/docx/blob/master/src/file/paragraph/run/properties.ts"
+      ],
+      "edition": "master",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "pandoc",
+      "group": "Vendor, platform and standards sources",
+      "name": "Pandoc User's Guide",
+      "governs": "`lang`, `--reference-doc`",
+      "urls": [
+        "https://pandoc.org/MANUAL.html"
+      ],
+      "edition": "2026-08-28",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "drive-export",
+      "group": "Vendor, platform and standards sources",
+      "name": "Google Drive API `files.export`",
+      "governs": "10 MB export limit",
+      "urls": [
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export"
+      ],
+      "edition": "2025-08-26",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓"
+    },
+    {
+      "id": "signposts",
+      "group": "Vendor, platform and standards sources",
+      "name": "AP Stylebook · Chicago Manual of Style · plainlanguage.gov",
+      "governs": "named as English signposts only",
+      "urls": [
+        "https://www.apstylebook.com/",
+        "https://www.chicagomanualofstyle.org/",
+        "https://www.plainlanguage.gov/guidelines/"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ reached (not quoted)"
+    },
+    {
+      "id": "google-fonts",
+      "group": "Vendor, platform and standards sources",
+      "name": "Google Fonts",
+      "governs": "Sarabun, Noto Sans Thai",
+      "urls": [
+        "https://fonts.google.com/specimen/Sarabun"
+      ],
+      "edition": "live",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": true,
+      "status": "✓ reached"
+    },
+    {
+      "id": "unverified-tools",
+      "group": "Vendor, platform and standards sources",
+      "name": "LibreOffice headless, Adobe Acrobat export, GNU gettext plural header, Word theme-font precedence, Windows Thai supplemental fonts",
+      "governs": null,
+      "urls": [],
+      "edition": "—",
+      "stamp": "2026-09-16",
+      "revalidate": "2027-03-15",
+      "verified": false,
+      "status": "⚠️ not opened (gettext manual 403); rules resting on them say ⚠️"
+    }
+  ]
+}
